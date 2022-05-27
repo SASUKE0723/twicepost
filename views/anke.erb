@@ -1,0 +1,151 @@
+<html lang="ja">
+    <head>
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width">
+        <title>
+            TWICE掲示板
+        </title>
+        <link rel="stylesheet/less" type="text/css" href="../CSS/styles.less" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.5.0-beta.5/less.min.js" ></script>
+        <link rel="shortcut icon" href="image/TWICE.ico">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">TWICE掲示板</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <% if !current_user.nil? %>
+                        <li>こんにちは、<%= current_user.name %>さん</li>
+                        <li><a href="/signout">ログアウト</a></li>
+                    <% else %>
+                        <li>新規ユーザーですか?</li>
+                        <li><a href="/signin">ログイン</a></li>
+                        <li><a href="/signup">新規登録</a></li>
+                    <% end %>
+                </ul>
+            </div>
+        </nav>
+        <div class="outer-menu">
+            <input class="checkbox-toggle" type="checkbox" />
+            <div class="hamburger">
+                <div></div>
+            </div>
+            <div class="menu">
+                <div>
+                  <div>
+                    <ul>
+                      <li><a href="/">メンバープロフィール</a></li>
+                      <li><a href="/page2">CD・アルバム</a></li>
+                      <li><a href="/post">投稿画面</a></li>
+                      <li><a href="/suke">スケジュール画面</a></li>
+                      <li><a href="/answers">アンケート回答一覧</a></li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <center style="background:white;">
+            <font style="color:blue;" size="6">
+                アンケートページ
+            </font>
+        </center>
+        <nav aria-label="...">
+            <ul class="pager">
+                <li class="previous">
+                    <a href="/suke">
+                        前のページへ
+                    </a>
+                </li>
+                <li class="next">
+                    <a href="/answers">
+                        次のページへ
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form action="/answers" method="post">
+                            <div class="form-group">
+                                名前<br>
+                                <input type="text" name="name">
+                            </div>
+                            <div class="form-group">
+                                学年
+                                <select name="grade">
+                                    <option value="小学生">小学生</option>
+                                    <option value="中学生">中学生</option>
+                                    <option value="高校生" selected>高校生</option>
+                                    <option value="大学生">大学生</option>
+                                    <option value="社会人">社会人</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                性別<br>
+                                <input type="radio" name="gender" value="男">男
+                                <input type="radio" name="gender" value="女">女
+                            </div>
+                            <div class="form-group">好きなメンバー:
+                                <select name="member">
+                                    <option value="NAYEON">ナヨン</option>
+                                    <option value="JEONGYEON">ジョンヨン</option>
+                                    <option value="MOMO">モモ</option>
+                                    <option value="SANA">サナ</option>
+                                    <option value="JIHYO" selected>ジヒョ</option>
+                                    <option value="MINA">ミナ</option>
+                                    <option value="DAHYUN">ダヒョン</option>
+                                    <option value="CHAEYOUNG">チェヨン</option>
+                                    <option value="TZUYU">ツウィ</option>
+                                </select>
+                            </div>
+                            <div class="form-group">好きな曲:
+                                <select name="music">
+                                    <option value="Like Ooh Ahh">Like Ooh Ahh</option>
+                                    <option value="CHEER UP">CHEER UP</option>
+                                    <option value="TT">TT</option>
+                                    <option value="KNOCK KNOCK">KNOCK KNOCK</option>
+                                    <option value="SIGNAL">SIGNAL</option>
+                                    <option value="Like Ooh Ahh japanese ver.">Like Ooh Ahh japanese ver.</option>
+                                    <option value="TT japanese ver." selected>TT japanese ver.</option>
+                                    <option value="SIGNAL japanese ver.">SIGNAL japanese ver.</option>
+                                    <option value="One More Time">One More Time</option>
+                                    <option value="Likey">Likey</option>
+                                    <option value="Heart Shaker">Heart Shaker</option>
+                                    <option value="Merry & Happy">Merry & Happy</option>
+                                    <option value="What is Love?">What is Love?</option>
+                                    <option value="Wake Me Up">Wake Me Up</option>
+                                    <option value="I want you back">I Want You Back</option>
+                                    <option value="Dance The Night Away">Dance The Night Away</option>
+                                </select>
+                            </div>
+                            <div class="form-group">感想・質問・その他<br>
+                                <textarea name="content" rows="5" cols="50"></textarea>
+                            </div>
+                            <input type="submit" class="btn btn-primary pull-left"></input>
+                            <input type="reset" class="btn btn-warning pull-left"></input>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p id="pageTop">
+            <a href="#">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </p>
+        <script type="text/javascript" src="TWICE.js"></script>
+    </body>
+</html>

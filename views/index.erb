@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width">
+        <title>
+            TWICE掲示板
+        </title>
+        <link rel="stylesheet/less" type="text/css" href="../CSS/styles.less" />
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.5.0-beta.5/less.min.js" ></script>
+        <link rel="shortcut icon" href="../image/TWICE.ico">
+        <!-- Latest compiled and minified CSS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">
+                        TWICE掲示板
+                    </a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <% if !current_user.nil? %>
+                        <li>
+                            こんにちは、<%= current_user.name %>さん
+                        </li>
+                        <li>
+                            <a href="/signout">
+                                ログアウト
+                            </a>
+                        </li>
+                    <% else %>
+                        <li>
+                            新規ユーザーですか?
+                        </li>
+                        <li>
+                            <a href="/signin">
+                                ログイン
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/signup">
+                                新規登録
+                            </a>
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
+        </nav>
+        <div class="outer-menu">
+            <input class="checkbox-toggle" type="checkbox" />
+            <div class="hamburger">
+                <div></div>
+            </div>
+            <div class="menu">
+                <div>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="/page2">
+                                    CD・アルバム
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/post">
+                                    投稿画面
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/suke">
+                                    スケジュール画面
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/anke">
+                                    アンケートページ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/answers">
+                                    アンケート回答一覧
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/twitter">
+                                    お問い合わせ
+                                </a>
+                            </li>
+                            <!--<li>-->
+                            <!--    <a href="/2">-->
+                            <!--        한국어로-->
+                            <!--    </a>-->
+                            <!--</li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header>
+            <center>
+                <!--<Marquee behavior="alternate" scrollamount="5">-->
+                    <!--<img src="image/ike.jpg" width="600" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/cheer.jpg" width="600" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/tt.jpg" width="550" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/knock.jpg" width="650" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/signal.jpg" width="700" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/tt japan.jpg" width="550" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/one.jpg" width="750" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/twicetagram.jpg" width="650" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/merry.jpg" width="750" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/heart shaker.jpg" width="750" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/Candy Pop.jpg" width="650" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/IMG_2379.jpg" width="750" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/Wake Me Up.jpg" width="550" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/Summer Night.jpg" width="750" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/BDZ.jpg" width="750" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/71f8df1329936086f612ce62236a27ba.jpg" width="750" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/91Uy-sYEUDL._SX355_.jpg" width="750" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/STAY BY MY SIDE.jpeg" width="750" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/TWICE２jp.jpeg" width="750" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/Twice-in-Manila-Fancy-You-e1555386516710.jpg" width="750" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/HAPPYHAPPY.jpg" width="750" height="487.5" alt="TWICE">-->
+                    <!--<img src="image/Breakthrough.jpg" width="750" height="487.5" alt="TWICE">-->
+                <!--</Marquee>-->
+                <div id="slideshow" class="slideshow">
+                    <img src="image/ike.jpg" width="600" height="487.5" alt="TWICE">
+                    <img src="image/cheer.jpg" width="600" height="487.5" alt="TWICE">
+                    <img src="image/tt.jpg" width="550" height="487.5" alt="TWICE">
+                    <img src="image/knock.jpg" width="650" height="487.5" alt="TWICE">
+                    <img src="image/signal.jpg" width="700" height="487.5" alt="TWICE">
+                    <img src="image/tt japan.jpg" width="550" height="487.5" alt="TWICE">
+                    <img src="image/one.jpg" width="750" height="487.5" alt="TWICE">
+                    <img src="image/twicetagram.jpg" width="650" height="487.5" alt="TWICE">
+                    <img src="image/merry.jpg" width="750" height="487.5" alt="TWICE">
+                    <img src="image/heart shaker.jpg" width="750" height="487.5" alt="TWICE">
+                    <img src="image/Candy Pop.jpg" width="650" height="487.5" alt="TWICE">
+                    <img src="image/IMG_2379.jpg" width="750" height="487.5" alt="TWICE">
+                    <img src="image/Wake Me Up.jpg" width="550" height="487.5" alt="TWICE">
+                    <img src="image/Summer Night.jpg" width="750" height="487.5" alt="TWICE">
+                    <img src="image/BDZ.jpg" width="750" height="487.5" alt="TWICE">
+                    <img src="image/71f8df1329936086f612ce62236a27ba.jpg" width="750" height="487.5" alt="TWICE">
+                    <img src="image/91Uy-sYEUDL._SX355_.jpg" width="750" height="487.5" alt="TWICE">
+                    <img src="image/STAY BY MY SIDE.jpeg" width="750" height="487.5" alt="TWICE">
+                    <img src="image/TWICE２jp.jpeg" width="750" height="487.5" alt="TWICE">
+                    <img src="image/Twice-in-Manila-Fancy-You-e1555386516710.jpg" width="750" height="487.5" alt="TWICE">
+                    <img src="image/HAPPYHAPPY.jpg" width="750" height="487.5" alt="TWICE">
+                    <img src="image/Breakthrough.jpg" width="750" height="487.5" alt="TWICE">
+                </div>
+                <hr>
+                <h1 style="color:green; background:white;">
+                    〜おすすめ動画〜
+                </h1>
+                <h2 style="color:red;">
+                    TWICE 新曲
+                    <br>
+                    <span style="color:orange;">
+                        <font size="6">
+                            Dance The Night Away
+                        </font>
+                    </span>
+                </h2>
+                <div class="video-wrap">
+                    <video  muted controls poster="image/Summer Night.jpg" width="750" height="500" id="video">
+                        <source src="movie/TWICE(트와이스) _Dance The Night Away_ M_V.mp4" type="video/mp4" />
+                        <img src="image/IMG_2365.jpg" />
+                    </video>
+                    <div class="video-btn" id="video-btn"></div>
+                </div>
+                <hr>
+                <h1 style="background:white; color:blue; ">
+                    メンバー
+                </h1>
+            </center>
+            <nav aria-label="...">
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="/answers">
+                            前のページへ
+                        </a>
+                    </li>
+                    <li class="next">
+                        <a href="/page2">
+                            次のページへ
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <center>
+              <ul>
+                <div class="containter">
+                    <div class="div-1">
+                        <h2 style="color:gray;">
+                            ナヨン
+                        </h2>
+                        <a style="color:white;" href="/nayeon" class="square_btn3">
+                            詳しく見る
+                        </a>
+                        <a href="/nayeon">
+                            <img src="../image/NAYEON.jpg"   width="300" height="450" alt="NAYEON">
+                        </a>
+                    </div>
+                    <div class="div-1">
+                        <h2 style="color:gray;">
+                            ジョンヨン
+                        </h2>
+                        <a style="color:white;" href="/jeongyeon" class="square_btn3">
+                            詳しく見る
+                        </a>
+                        <a href="/jeongyeon">
+                            <img src="image/JEONGYEON.jpg"  width="300" height="450" alt="JEONGYEON">
+                        </a>
+                    </div>
+                    <div class="div-1">
+                        <h2 style="color:gray;">
+                            モモ
+                        </h2>
+                        <a style="color:white;" href="/momo" class="square_btn3">
+                            詳しく見る
+                        </a>
+                        <a href="/momo">
+                            <img src="image/MOMO.jpg"  width="300" height="450" alt="MOMO">
+                        </a>
+                    </div>
+                    <div class="div-1">
+                        <h2 style="color:gray;">
+                            サナ
+                        </h2>
+                        <a style="color:white;" href="/sana" class="square_btn3">
+                            詳しく見る
+                        </a>
+                        <a href="/sana">
+                            <img src="image/SANA.jpg"  width="300" height="450" alt="SANA">
+                        </a>
+                    </div>
+                    <div class="div-1">
+                        <h2 style="color:gray;">
+                            ジヒョ
+                        </h2>
+                        <a style="color:white;" href="/jihyo" class="square_btn3">
+                            詳しく見る
+                        </a>
+                        <a href="/jihyo">
+                            <img src="image/JIHYO.jpg"  width="300" height="450" alt="JIHYO">
+                        </a>
+                    </div>
+                    <div class="div-1">
+                        <h2 style="color:gray;">
+                            ミナ
+                        </h2>
+                        <a style="color:white;" href="/mina" class="square_btn3">
+                            詳しく見る
+                        </a>
+                        <a href="/mina">
+                            <img src="image/MINA.jpg"  width="300" height="450" alt="MINA">
+                        </a>
+                    </div>
+                    <div class="div-1">
+                        <h2 style="color:gray;">
+                            ダヒョン
+                        </h2>
+                        <a style="color:white;" href="/dahyun" class="square_btn3">
+                            詳しく見る
+                        </a>
+                        <a href="/dahyun">
+                            <img src="image/DAHYUN.jpg"  width="300" height="450" alt="DAHYUN">
+                        </a>
+                    </div>
+                    <div class="div-1">
+                        <h2 style="color:gray;">
+                            チェヨン
+                        </h2>
+                        <a style="color:white;" href="/chaeyoung" class="square_btn3">
+                            詳しく見る
+                        </a>
+                        <a href="/chaeyoung">
+                            <img src="image/CHAEYOUNG.jpg"  width="300" height="450" alt="CHAEYOUNG">
+                        </a>
+                    </div>
+                    <div class="div-1">
+                        <h2 style="color:gray;">
+                            ツウィ
+                        </h2>
+                        <a style="color:white;" href="/tzuyu" class="square_btn3">
+                            詳しく見る
+                        </a>
+                        <a href="/tzuyu">
+                            <img src="image/TZUYU.jpg"  width="300" height="450" alt="TZUYU">
+                        </a>
+                    </div>
+                </div>
+              </ul>
+            </center>
+        </header>
+        <nav aria-label="...">
+            <ul class="pager">
+                <li class="previous">
+                    <a href="/answers">
+                        前のページへ
+                    </a>
+                </li>
+                <li class="next">
+                    <a href="/page2">
+                        次のページへ
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <p id="pageTop">
+            <a href="#">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </p>
+        <script type="text/javascript" src="../javascript/TWICE.js"></script>
+    </body>
+</html>

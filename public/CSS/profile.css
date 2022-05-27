@@ -1,0 +1,19 @@
+body {
+  background: linear-gradient(-135deg, #1f1f1f, #2a2a2a, #353535, #3f3f3f, 	#4a4a4a, #555555 );
+}
+
+.page-navi .pn-next {
+    right: 20px;
+}
+.page-navi .pn-prev, .page-navi .pn-next {
+    position: fixed;
+    top: 50%;
+    padding: 0;
+    margin: 0;
+    margin-top: -30px;
+    display: inline-block;
+    z-index: 31;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width">
+        <title>
+            TWICE掲示板 ダヒョン
+        </title>
+        <link rel="shortcut icon" href="image/favicon.ico">
+        <link rel="stylesheet/less" type="text/css" href="../CSS/styles.less" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.5.0-beta.5/less.min.js" ></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <script type="text/javascript" src="TWICE.js"></script>
+    </head>
+    <body style="background: linear-gradient(135deg, #1f1f1f, #2a2a2a, #353535, #3f3f3f, #4a4a4a, #555555 );">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">TWICE掲示板</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <% if !current_user.nil? %>
+                        <li>こんにちは、<%= current_user.name %>さん</li>
+                        <li><a href="/signout">ログアウト</a></li>
+                    <% else %>
+                        <li>新規ユーザーですか?</li>
+                        <li><a href="/signin">ログイン</a></li>
+                        <li><a href="/signup">新規登録</a></li>
+                    <% end %>
+                </ul>
+            </div>
+        </nav>
+        <nav aria-label="...">
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="/mina">
+                            前のページへ
+                        </a>
+                    </li>
+                    <li class="next">
+                        <a href="/chaeyoung">
+                            次のページへ
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        <div style="color:white;">
+            <img src="image/DAHYUN.jpg"  width="450" height="650" alt="DAHYUN" align="right">
+            <ul>
+                <center>
+                    <font size="7">
+                        <b>
+                            DAHYUN
+                        </b>
+                    </font>
+                    <br>
+                    <br>
+                    <br>
+                    <font size="6">
+                        <p>本名：キム・ダヒョン(김다현)</p>
+                        <p>生年月日：1998年5月28日</p>
+                        <p>血液型：O型</p>
+                        <p>身長：162㎝</p>
+                        <p>出身地：韓国京畿道城南市</p>
+                        <p>ポジション：リードラッパー</p>
+                    </font>
+                </center>
+            </ul>
+        </div>
+    </body>
+</html>

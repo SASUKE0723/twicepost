@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width">
+        <title>
+            TWICE掲示板 Dance The Night Away
+        </title>
+        <link rel="stylesheet/less" type="text/css" href="../CSS/styles.less" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.5.0-beta.5/less.min.js" ></script>
+        <link rel="shortcut icon" href="image/TWICE.ico">
+        <!-- Latest compiled and minified CSS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    </head>
+    <body style="background: linear-gradient(135deg, #FFD460, #F07B3F, #EA5455, #2D4059 );">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">TWICE掲示板</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <% if !current_user.nil? %>
+                        <li>こんにちは、<%= current_user.name %>さん</li>
+                        <li><a href="/signout">ログアウト</a></li>
+                    <% else %>
+                        <li>新規ユーザーですか?</li>
+                        <li><a href="/signin">ログイン</a></li>
+                        <li><a href="/signup">新規登録</a></li>
+                    <% end %>
+                </ul>
+            </div>
+        </nav>
+        <p>
+            <a href="https://tower.jp/item/4755003/Summer-Nights%EF%BC%9A-2nd-Special-Album-(%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3)" target="_blank">
+                <img src="image/Summer Night.jpg" width="850" height="600" alt="Dance The Night Away" align="right">
+            </a>
+            <center>
+                <font size="5">
+                    <h1>Summer Night</h1>
+                    <h2>概要</h2>
+                    <p>
+                        韓国の2nd special ALBUM
+                        <br>
+                        メイン曲はDance The Night Away
+                    </p>
+                    <h2>曲</h2>
+                    <p>
+                        Dance The Night Away　M/Vは
+                        <span>
+                            <a href="https://www.youtube.com/watch?v=Fm5iP0S1z9w" target="_blank">
+                                こちら
+                            </a> 
+                        </span>
+                        <br>
+                        CHILLAX
+                        <br>
+                        Shot thru the heart
+                        <br>
+                        What is Love?
+                        <br>
+                        SWEET TALKER
+                        <br>
+                        HO!
+                        <br>
+                        DEJAVU
+                        <br>
+                        Say Yes
+                        <br>
+                        STUCK
+                        <br>
+                    </p>
+                    <h3>
+                        <a href="https://tower.jp/item/4755003/Summer-Nights%EF%BC%9A-2nd-Special-Album-(%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3)" target="_blank">
+                            購入はこちら
+                        </a>
+                    </h3>
+                </font>
+            </center>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width">
+        <title>
+            TWICE掲示板 Page Two
+        </title>
+        <link rel="stylesheet/less" type="text/css" href="../CSS/styles.less" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.5.0-beta.5/less.min.js" ></script>
+        <link rel="shortcut icon" href="image/TWICE.ico">
+        <!-- Latest compiled and minified CSS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    </head>
+    <body style="background: linear-gradient(135deg, #f0f8ff, #f0f8ff, #87cefa, #00bfff );">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">TWICE掲示板</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <% if !current_user.nil? %>
+                        <li>こんにちは、<%= current_user.name %>さん</li>
+                        <li><a href="/signout">ログアウト</a></li>
+                    <% else %>
+                        <li>新規ユーザーですか?</li>
+                        <li><a href="/signin">ログイン</a></li>
+                        <li><a href="/signup">新規登録</a></li>
+                    <% end %>
+                </ul>
+            </div>
+        </nav>
+        <p>
+            <a href="https://www.amazon.co.jp/2nd%E3%83%9F%E3%83%8B%E3%82%A2%E3%83%AB%E3%83%90%E3%83%A0-Page-Two-%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3-%E9%9F%93%E5%9B%BD%E7%9B%A4/dp/B01E5A9EE8" target="_blank">
+                <img src="image/Page Two.jpeg" width="600" height="550" alt="Page Two" align="right">
+            </a>
+            <center>
+                <font size="5">
+                    <h1>
+                        Page Two
+                    </h1>
+                    <h2>
+                        概要
+                    </h2>
+                    <p>
+                        2枚目のミニアルバム
+                        <br>
+                        メイン曲はCHEER UP
+                        <br>
+                        2016年4月25日にリリースされた
+                    </p>
+                    <h2>
+                        曲
+                    </h2>
+                    <p>
+                        CHEER UP　M/Vは
+                        <span>
+                            <a href="https://youtu.be/c7rCyll5AeY" target="_blank">
+                                こちら
+                            </a>
+                        </span>
+                        <br>
+                        Precious Love
+                        <br>
+                        TOUCHDOWN
+                        <br>
+                        Ready To Talk
+                        <br>
+                        WOOHOO
+                        <br>
+                        HEADPHONES
+                        <br>
+                        I'M GONNA BE A STAR
+                    </p>
+                    <h3>
+                        <a href="https://www.amazon.co.jp/2nd%E3%83%9F%E3%83%8B%E3%82%A2%E3%83%AB%E3%83%90%E3%83%A0-Page-Two-%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3-%E9%9F%93%E5%9B%BD%E7%9B%A4/dp/B01E5A9EE8" target="_blank">
+                            購入はこちら
+                        </a>
+                    </h3>
+                </font>
+            </center>
+        </p>
+  </body>
+</html>
